@@ -1,0 +1,38 @@
+@import 'color';
+
+.card {
+  margin: 25px;
+  padding: 25px;
+
+  .header {
+    margin-bottom: 50px;
+
+    .title {
+      font-weight: bold;
+      font-size: 30px;
+    }
+
+    .subtitle {
+      font-weight: bold;
+      font-size: 25px;
+      color: $nevada-gray;
+    }
+  }
+
+  .detail {
+
+    .attribute {
+      margin-bottom: 30px;
+
+      .label {
+        font-weight: bold;
+        font-size: 18px;
+      }
+
+      .value {
+        font-size: 18px;
+        color: $nevada-gray;
+      }
+    }
+  }
+}
