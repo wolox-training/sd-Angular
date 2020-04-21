@@ -3,36 +3,47 @@
 .card {
   margin: 25px;
   padding: 25px;
+  display: flex;
 
-  .header {
-    margin-bottom: 50px;
+  .card-body{
+    order: 2;
 
-    .title {
-      font-weight: bold;
-      font-size: 30px;
-    }
+    .header {
+      margin-bottom: 50px;
 
-    .subtitle {
-      font-weight: bold;
-      font-size: 25px;
-      color: $nevada-gray;
-    }
-  }
-
-  .detail {
-
-    .attribute {
-      margin-bottom: 30px;
-
-      .label {
+      .title {
         font-weight: bold;
-        font-size: 18px;
+        font-size: 30px;
       }
 
-      .value {
-        font-size: 18px;
+      .subtitle {
+        font-weight: bold;
+        font-size: 25px;
         color: $nevada-gray;
       }
     }
+
+    .detail {
+
+      .attribute {
+        margin-bottom: 30px;
+
+        .label {
+          font-weight: bold;
+          font-size: 18px;
+        }
+
+        .value {
+          font-size: 18px;
+          color: $nevada-gray;
+        }
+      }
+    }
+  }
+
+  .cover-image {
+    width: 100%;
+    max-width: 350px;
+    margin-right: 25px;
   }
 }
