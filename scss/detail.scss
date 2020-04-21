@@ -1,5 +1,10 @@
 @import 'color';
 
+@mixin detail-attribute {
+  font-weight: bold;
+  font-size: 18px;
+}
+
 .card {
   margin: 25px;
   padding: 25px;
@@ -25,8 +30,7 @@
       margin-bottom: 30px;
 
       .label {
-        font-weight: bold;
-        font-size: 18px;
+        @include detail-attribute;
       }
 
       .value {
