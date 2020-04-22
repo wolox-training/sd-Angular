@@ -1,0 +1,10 @@
+@mixin detail-attribute {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+@mixin box-shadow {
+  -webkit-box-shadow: 2px 4px 8px 1px rgba(122,117,122,1);
+  -moz-box-shadow: 2px 4px 8px 1px rgba(122,117,122,1);
+  box-shadow: 2px 4px 8px 1px rgba(122,117,122,1);
+}
