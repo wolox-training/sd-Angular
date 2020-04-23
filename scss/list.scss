@@ -6,7 +6,7 @@ $title-font-size: 16px;
 .cards-container {
   width: 100%;
   max-width: 900px;
-  margin: 104px auto;
+  margin: ($navbar-height + 34px) auto;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -14,7 +14,6 @@ $title-font-size: 16px;
   .mini-card {
     width: 100%;
     max-width: 198px;
-    height: 300px;
     margin-bottom: 36px;
     padding: 28px;
     @include box-shadow;
@@ -30,8 +29,7 @@ $title-font-size: 16px;
     }
 
     .mini-cover-image {
-      width: 100%;
-      max-width: 142px;
+      width: 142px
     }
   }
 }

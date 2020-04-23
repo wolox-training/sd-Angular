@@ -1,3 +1,5 @@
+$navbar-height: 70px;
+
 @mixin bold-text($font-size) {
   font-weight: bold;
   font-size: $font-size;
