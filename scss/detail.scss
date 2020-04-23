@@ -5,12 +5,22 @@
   font-size: 18px;
 }
 
+@mixin box-shadow {
+  -webkit-box-shadow: 2px 4px 8px 1px rgba(122,117,122,1);
+  -moz-box-shadow: 2px 4px 8px 1px rgba(122,117,122,1);
+  box-shadow: 2px 4px 8px 1px rgba(122,117,122,1);
+}
+
 .card {
-  margin: 25px;
+  margin: 25px auto;
   padding: 25px;
   display: flex;
+  width: 100%;
+  max-width: 1000px;
+  @include box-shadow;
 
   .card-body{
+    width: 100%;
     order: 2;
 
     .header {
@@ -25,6 +35,14 @@
         font-weight: bold;
         font-size: 25px;
         color: $nevada-gray;
+      }
+
+      &:after {
+        content: '';
+        display: inline-block;
+        width: 100%;
+        height: 5px;
+        background: $earls-green;
       }
     }
 
@@ -45,9 +63,30 @@
     }
   }
 
-  .cover-image {
+  .image-container {
     width: 100%;
-    max-width: 350px;
-    margin-right: 25px;
+    height: 100%;
+    max-width: 250px;
+    max-height: 350px;
+    margin-right: 50px;
+    position: relative;
+
+    .cover-image {
+      width: 100%;
+    }
+
+    &:after {
+      content: '';
+      background: url(img/badge.png) no-repeat center center;
+      background-size: contain;
+      display: block;
+      width: 80px;
+      height: 80px;
+      position: absolute;
+      top: -10px;
+      right: -30px;
+      transform: rotate(15deg);
+    }
   }
+
 }
