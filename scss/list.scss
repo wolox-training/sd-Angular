@@ -4,7 +4,7 @@
 .cards-container {
   width: 100%;
   max-width: 900px;
-  margin: 104px auto;
+  margin: ($navbar-height + 34px) auto;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
