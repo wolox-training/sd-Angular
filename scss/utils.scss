@@ -15,3 +15,21 @@ $navbar-height: 70px;
   width: 100%;
   max-width: 212px;
 }
+
+@mixin general-btn-style($text-color, $bg-color) {
+  @include form-element;
+  color: $text-color;
+  background-color: $bg-color;
+}
+
+@mixin fill-green-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include general-btn-style(white, $earls-green);
+}
+
+@mixin no-fill-green-btn {
+  @include general-btn-style($earls-green, transparent);
+  border: 2px solid $earls-green;
+}
