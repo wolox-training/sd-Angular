@@ -1,4 +1,11 @@
 $navbar-height: 70px;
+$screen-xl-max: 1024px;
+
+@mixin xl {
+  @media (max-width: #{$screen-xl-max}) {
+    @content;
+  }
+}
 
 @mixin bold-text($font-size) {
   font-weight: bold;
