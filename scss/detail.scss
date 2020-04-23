@@ -1,82 +1,105 @@
 @import 'color';
 @import 'utils';
 
-.card {
+.container {
+  position: relative;
   margin: 25px auto;
-  padding: 25px;
-  display: flex;
   width: 100%;
   max-width: 1000px;
-  @include box-shadow;
 
-  .card-body{
-    width: 100%;
-    order: 2;
+  .back-btn {
+    margin-bottom: 108px;
+    margin-top: 46px;
+    padding-left: 32px;
 
-    .header {
-      margin-bottom: 50px;
+    &::before {
+      background: url(img/back-arrow.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      content: '';
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      top: 44px;
+    }
+  }
 
-      .title {
-        font-weight: bold;
-        font-size: 30px;
+  .card {
+    padding: 25px;
+    display: flex;
+    @include box-shadow;
+
+    .card-body{
+      width: 100%;
+      order: 2;
+
+      .header {
+        margin-bottom: 50px;
+
+        .title {
+          font-weight: bold;
+          font-size: 30px;
+        }
+
+        .subtitle {
+          font-weight: bold;
+          font-size: 25px;
+          color: $nevada-gray;
+        }
+
+        &:after {
+          content: '';
+          display: inline-block;
+          width: 100%;
+          height: 5px;
+          background: $earls-green;
+        }
       }
 
-      .subtitle {
-        font-weight: bold;
-        font-size: 25px;
-        color: $nevada-gray;
+      .detail {
+
+        .attribute {
+          margin-bottom: 30px;
+
+          .label {
+            @include detail-attribute;
+          }
+
+          .value {
+            font-size: 18px;
+            color: $nevada-gray;
+          }
+        }
+      }
+    }
+
+    .image-container {
+      width: 100%;
+      height: 100%;
+      max-width: 250px;
+      max-height: 350px;
+      margin-right: 50px;
+      position: relative;
+
+      .cover-image {
+        width: 100%;
       }
 
       &:after {
         content: '';
-        display: inline-block;
-        width: 100%;
-        height: 5px;
-        background: $earls-green;
-      }
-    }
-
-    .detail {
-
-      .attribute {
-        margin-bottom: 30px;
-
-        .label {
-          @include detail-attribute;
-        }
-
-        .value {
-          font-size: 18px;
-          color: $nevada-gray;
-        }
+        background: url(img/badge.png) no-repeat center center;
+        background-size: contain;
+        display: block;
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        top: -10px;
+        right: -30px;
+        transform: rotate(15deg);
       }
     }
   }
-
-  .image-container {
-    width: 100%;
-    height: 100%;
-    max-width: 250px;
-    max-height: 350px;
-    margin-right: 50px;
-    position: relative;
-
-    .cover-image {
-      width: 100%;
-    }
-
-    &:after {
-      content: '';
-      background: url(img/badge.png) no-repeat center center;
-      background-size: contain;
-      display: block;
-      width: 80px;
-      height: 80px;
-      position: absolute;
-      top: -10px;
-      right: -30px;
-      transform: rotate(15deg);
-    }
-  }
-
 }
+
