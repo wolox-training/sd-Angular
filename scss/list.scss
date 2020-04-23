@@ -12,7 +12,6 @@
   .mini-card {
     width: 100%;
     max-width: 198px;
-    height: 300px;
     margin-bottom: 36px;
     padding: 28px;
     @include box-shadow;
@@ -29,8 +28,7 @@
     }
 
     .mini-cover-image {
-      width: 100%;
-      max-width: 142px;
+      width: 142px
     }
   }
 }
