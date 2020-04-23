@@ -9,6 +9,7 @@
   top: 0;
   background: white;
   border-top: 6px solid $cerulean;
+  z-index: 99999999;
   @include box-shadow;
 
   .content {
