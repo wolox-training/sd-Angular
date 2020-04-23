@@ -1,0 +1,88 @@
+@mixin form-element {
+  width: 100%;
+  border-radius: 5px;
+  height: 32px;
+  padding: 0 15px;
+}
+
+@mixin form-btns($text-color, $bg-color) {
+  @include form-element;
+  color: $text-color;
+  background-color: $bg-color;
+}
+
+.login-container {
+  display: flex;
+  height: 100vh;
+
+  .login-form {
+    margin: auto;
+    width: 100%;
+    max-width: 300px;
+    height: 400px;
+    position: relative;
+    background-color: $wild-sand;
+
+    &:before {
+      content: '';
+      width: 100%;
+      height: 8px;
+      position: relative;
+      background-color: $cerulean;
+    }
+
+    .logo {
+      @include logo-size;
+      margin: 28px auto 0;
+      display: block;
+    }
+
+    .input-elements {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      padding: 0 25px;
+
+      .label {
+        margin-top: 16px;
+        margin-bottom: 8px;
+        font-size: 16px;
+      }
+
+      .input {
+        @include form-element;
+      }
+    }
+
+    .form-actions {
+      padding: 0 25px;
+      position: relative;
+
+      &:after {
+        content: '';
+        height: 2px;
+        background-color: $silver-chalice;
+        display: block;
+        position: relative;
+        bottom: 48px;
+        left: 0;
+        right: 0;
+      }
+
+      .fill-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 24px;
+        @include form-btns(white, $earls-green);
+      }
+
+      .no-fill-btn {
+        border: 2px solid $earls-green;
+        margin-top: 32px;
+        @include form-btns($earls-green, transparent);
+      }
+    }
+  }
+}
+
