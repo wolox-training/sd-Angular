@@ -2,12 +2,12 @@
 @import 'utils';
 
 .container {
-  position: relative;
   margin: 25px auto;
   width: 100%;
   max-width: 1000px;
 
   .back-btn {
+    position: relative;
     margin-bottom: 108px;
     margin-top: 46px;
     padding-left: 32px;
@@ -22,7 +22,7 @@
       display: inline-block;
       position: absolute;
       left: 0;
-      top: 44px;
+      top: -2px;
     }
   }
 
