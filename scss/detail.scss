@@ -10,7 +10,13 @@ $detail-margin-bottom: 36px;
 .container {
   margin: 25px auto;
   width: 100%;
-  max-width: 853px;
+	max-width: 853px;
+	
+	@include sm {
+		max-width: 336px;
+		display: flex;
+    position: relative;
+	}
 
   .back-btn {
     position: relative;
@@ -29,7 +35,26 @@ $detail-margin-bottom: 36px;
       position: absolute;
       left: 0;
       top: -2px;
-    }
+		}
+		
+		@include sm {
+			width: 100%;
+			position: absolute;
+			bottom: -70px;
+			text-align: center;
+
+			&::before {
+				background: url(img/back-arrow.png);
+				background-repeat: no-repeat;
+				background-size: contain;
+				content: '';
+				width: 20px;
+				height: 20px;
+				display: inline-block;
+				left: 120px;
+				top: -2px;
+			}
+		}
 	}
 
 	.card {
@@ -43,6 +68,18 @@ $detail-margin-bottom: 36px;
 		;
 		padding: 32px;
 
+		@include sm {
+			grid-template-columns: 1fr;
+			grid-template-rows: auto auto auto auto;
+			grid-template-areas:
+				'header'
+				'image-container'
+				'subtitle'
+				'detail'
+			;
+			display: grid;
+		}
+
 		.header {
 			grid-area: header;
 			text-align: center;
@@ -53,16 +90,26 @@ $detail-margin-bottom: 36px;
 				'title'
 				'subtitle'
 			;
-
+			
 			.title {
 				grid-area: title;
-				@include bold-text($title-font-size)
+				@include bold-text($title-font-size);
+
+				@include sm {
+					@include bold-text($title-font-size * 0.75);
+				}
 			}
 
 			.subtitle {
 				grid-area: subtitle;
 				@include bold-text($subtitle-font-size);
 				color: $nevada-gray;
+
+				@include sm {
+					font-weight: normal;
+					font-size: $subtitle-font-size * 0.75;
+					margin-bottom: 20px;
+				}
 			}
 		}
 
@@ -70,24 +117,41 @@ $detail-margin-bottom: 36px;
 			grid-area: detail;
 			display: flex;
 
+			@include sm {
+				margin-top: 52px;
+				padding-top: 18px;
+				border-top: 4px solid $earls-green;
+			}
+
 			.detail {
 				margin: auto;
 
 				.attribute {
 					margin-bottom: $detail-margin-bottom;
+
+					@include sm {
+						margin-bottom: $detail-margin-bottom * 0.5;
+					}
 	
 					.label {
 						@include bold-text($attribute-font-size);
+
+						@include sm {
+							@include bold-text($attribute-font-size * 0.58);
+						}
 					}
 	
 					.value {
 						color: $nevada-gray;
 						font-size: $attribute-font-size;
+
+						@include sm {
+							font-size: $attribute-font-size * 0.58;
+						}
 					}
 				}
 			}
 		}
-
 
     .image-container {
 			grid-area: image-container;
@@ -98,9 +162,25 @@ $detail-margin-bottom: 36px;
 			position: relative;
 			margin: 44px 0 56px 0;
 
+			@include sm {
+				max-width: 212px;
+			}
+
       .cover-image {
         width: 100%;
-      }
+			}
+			
+			@include sm {
+				grid-template-columns: 1fr;
+				grid-template-rows: auto auto auto;
+				grid-template-areas:
+					'header'
+					'image-container'
+					'detail'
+				;
+				margin: auto;
+			}
+	
 
       &:after {
         content: '';
