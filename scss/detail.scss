@@ -22,7 +22,8 @@ $detail-margin-bottom: 36px;
     position: relative;
     margin-bottom: 33px;
     margin-top: 46px;
-    padding-left: 32px;
+		padding-left: 32px;
+		font-size: 18px;
 
     &::before {
       background: url(img/back-arrow.png);
