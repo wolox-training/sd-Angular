@@ -1,10 +1,24 @@
 @import 'color';
 @import 'utils';
 
+$attribute-font-size: 18px;
+$title-font-size: 30px;
+$subtitle-font-size: 25px;
+$badge-height: 80px;
+$badge-width: 80px;
+$header-margin-bottom: 50px;
+$detail-margin-bottom: 30px;
+
 .container {
   margin: 25px auto;
   width: 100%;
   max-width: 1000px;
+
+  @include xl {
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
 
   .back-btn {
     position: relative;
@@ -12,7 +26,7 @@
     margin-top: 46px;
     padding-left: 32px;
 
-    &::before {
+    &:before {
       background: url(img/back-arrow.png);
       background-repeat: no-repeat;
       background-size: contain;
@@ -23,6 +37,12 @@
       position: absolute;
       left: 0;
       top: -2px;
+    }
+
+    @include xl {
+      position: absolute;
+      bottom: -40px;
+      margin: 0 auto;
     }
   }
 
@@ -36,16 +56,14 @@
       order: 2;
 
       .header {
-        margin-bottom: 50px;
+        margin-bottom: $header-margin-bottom;
 
         .title {
-          font-weight: bold;
-          font-size: 30px;
+          @include bold-text($title-font-size);
         }
 
         .subtitle {
-          font-weight: bold;
-          font-size: 25px;
+          @include bold-text($subtitle-font-size);
           color: $nevada-gray;
         }
 
@@ -56,20 +74,44 @@
           height: 5px;
           background: $earls-green;
         }
+
+        @include xl {
+          margin-bottom: $header-margin-bottom * 0.35;
+
+          .title {
+            @include bold-text($title-font-size * 0.8);
+          }
+
+          .subtitle {
+            @include bold-text($subtitle-font-size * 0.65);
+          }
+        }
       }
 
       .detail {
 
         .attribute {
-          margin-bottom: 30px;
+          margin-bottom: $detail-margin-bottom;
 
           .label {
-            @include detail-attribute;
+            @include bold-text($attribute-font-size);
           }
 
           .value {
-            font-size: 18px;
             color: $nevada-gray;
+            font-size: $attribute-font-size;
+          }
+
+          @include xl {
+            margin-bottom: $detail-margin-bottom * 0.7;
+
+            .value {
+              font-size: $attribute-font-size * 0.7;
+            }
+
+            .label {
+              @include bold-text($attribute-font-size * 0.7);
+            }
           }
         }
       }
@@ -92,14 +134,31 @@
         background: url(img/badge.png) no-repeat center center;
         background-size: contain;
         display: block;
-        width: 80px;
-        height: 80px;
+        width: $badge-width;
+        height: $badge-height;
         position: absolute;
         top: -10px;
         right: -30px;
         transform: rotate(15deg);
       }
+
+      @include xl {
+        width: 212px;
+        margin: 0 auto 23px auto;
+
+        &:after {
+          width: $badge-width * 0.7;
+          height: $badge-height * 0.7;
+          right: -20px;
+        }
+      }
+    }
+
+    @include xl {
+      width: 100%;
+      max-width: 336px;
+      margin: auto;
+      flex-direction: column;
     }
   }
 }
-

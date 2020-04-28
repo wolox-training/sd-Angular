@@ -1,12 +1,42 @@
 $navbar-height: 70px;
+$screen-xl-max: 1024px;
 
-@mixin detail-attribute {
+@mixin xl {
+  @media (max-width: #{$screen-xl-max}) {
+    @content;
+  }
+}
+
+@mixin bold-text($font-size) {
   font-weight: bold;
-  font-size: 18px;
+  font-size: $font-size;
 }
 
 @mixin box-shadow {
   -webkit-box-shadow: 2px 4px 8px 1px rgba(122,117,122,1);
   -moz-box-shadow: 2px 4px 8px 1px rgba(122,117,122,1);
   box-shadow: 2px 4px 8px 1px rgba(122,117,122,1);
+}
+
+@mixin logo-size{
+  width: 100%;
+  max-width: 212px;
+}
+
+@mixin general-btn-style($text-color, $bg-color) {
+  @include form-element;
+  color: $text-color;
+  background-color: $bg-color;
+}
+
+@mixin fill-green-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include general-btn-style(white, $earls-green);
+}
+
+@mixin no-fill-green-btn {
+  @include general-btn-style($earls-green, transparent);
+  border: 2px solid $earls-green;
 }

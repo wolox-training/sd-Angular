@@ -1,0 +1,63 @@
+@mixin form-element {
+  width: 100%;
+  border-radius: 5px;
+  height: 32px;
+  padding: 0 15px;
+}
+
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 100%;
+  max-width: 300px;
+  position: relative;
+  background-color: $wild-sand;
+  margin-top: 50px;
+  padding: 0 25px;
+  border-top: 8px solid $cerulean;
+
+  .no-fill-btn {
+    @include no-fill-green-btn;
+    margin-bottom: 24px;
+    margin-top: 16px;
+  }
+
+  .login-form {
+    border-bottom: 2px solid $silver-chalice;
+
+    .logo {
+      @include logo-size;
+      margin: 28px auto 0;
+      display: block;
+    }
+
+    .input-elements {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      .label {
+        margin-top: 16px;
+        margin-bottom: 8px;
+        font-size: 16px;
+      }
+
+      .input {
+        @include form-element;
+      }
+    }
+
+    .form-actions {
+      position: relative;
+      margin-bottom: 16px;
+
+      .fill-btn {
+        @include fill-green-btn;
+        margin-top: 24px;
+      }
+    }
+  }
+}
+
