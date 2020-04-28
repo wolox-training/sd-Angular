@@ -62,7 +62,6 @@ $detail-margin-bottom: 36px;
 		@include box-shadow;
 		display: grid;
 		grid-template-columns: auto 1fr;
-		grid-template-rows: auto auto;
 		grid-template-areas:
 			'header header'
 			'image-container detail'
@@ -71,7 +70,6 @@ $detail-margin-bottom: 36px;
 
 		@include sm {
 			grid-template-columns: 1fr;
-			grid-template-rows: auto auto auto auto;
 			grid-template-areas:
 				'header'
 				'image-container'
@@ -86,7 +84,6 @@ $detail-margin-bottom: 36px;
 			text-align: center;
 			display: grid;
 			grid-template-columns: 1fr;
-			grid-template-rows: auto auto;
 			grid-template-areas:
 				'title'
 				'subtitle'
@@ -173,7 +170,6 @@ $detail-margin-bottom: 36px;
 			
 			@include sm {
 				grid-template-columns: 1fr;
-				grid-template-rows: auto auto auto;
 				grid-template-areas:
 					'header'
 					'image-container'
