@@ -1,3 +1,5 @@
+@import 'color';
+
 $navbar-height: 70px;
 $screen-sm-max: 848px;
 
@@ -46,4 +48,10 @@ $screen-sm-max: 848px;
 @mixin no-fill-green-btn {
   @include general-btn-style($earls-green, transparent);
   border: 2px solid $earls-green;
+}
+
+.form-error {
+  color: $crimson;
+  font-size: 11px;
+  margin: 10px 0;
 }

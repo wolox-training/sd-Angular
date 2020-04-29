@@ -1,1 +1,42 @@
-<p>signup-form works!</p>
+<app-auth-form [secondaryButtonText]="secondaryButtonText">
+	<form [formGroup]="signUpForm" (ngSubmit)="onSubmit(signUpForm.value)">
+		<!--Name input-->
+		<app-text-input [inputName]="'name'" [inputLabel]="'Name'" [inputType]="'text'" [parentForm]="signUpForm"></app-text-input>
+		<!--/ Name input-->
+	
+		<!--Last Name input-->
+		<app-text-input [inputName]="'lastName'" [inputLabel]="'Last Name'" [inputType]="'text'" [parentForm]="signUpForm"></app-text-input>
+		<!--/ Last Name input-->
+
+		<!--Email Input-->
+		<app-text-input [inputName]="'email'" [inputLabel]="'Email'" [inputType]="'email'" [parentForm]="signUpForm"></app-text-input>
+		<div class="form-error" *ngIf="signUpForm.get('email').errors?.required && (signUpForm.get('email').touched || signUpForm.get('email').dirty)">
+			Email is required.
+		</div>
+		<div class="form-error" *ngIf="signUpForm.get('email').errors?.email && (signUpForm.get('email').touched || signUpForm.get('email').dirty)">
+			Invalid email format.
+		</div>
+		<!--/ Email Input-->
+
+		<!--Password Input-->
+		<app-text-input [inputName]="'password'" [inputLabel]="'Password'" [inputType]="'password'" [parentForm]="signUpForm"></app-text-input>
+		<div class="form-error" *ngIf="signUpForm.get('password').errors?.required && (signUpForm.get('password').touched || signUpForm.get('password').dirty)">
+			Password is required.
+		</div>
+		<div class="form-error" *ngIf="signUpForm.get('password').errors?.pattern && (signUpForm.get('password').touched || signUpForm.get('password').dirty)">
+			Please include at least one number and one capital letter.
+		</div>
+		<!--/ Password Input-->
+
+		<!--Password Confirmation Input-->
+		<app-text-input [inputName]="'passwordConfirmation'" [inputLabel]="'Password Confirmation'" [inputType]="'password'" [parentForm]="signUpForm"></app-text-input>
+		<div class="form-error" *ngIf="signUpForm.errors?.notMatchingPasswords && (signUpForm.get('passwordConfirmation').touched || signUpForm.get('passwordConfirmation').dirty)">
+			Password confirmation do not match.
+		</div>
+		<!--/ Password Confirmation Input-->
+
+		<div class="form-actions">
+			<button class="fill-btn" type="submit">Sign Up</button>
+		</div>
+	</form>
+</app-auth-form>

@@ -1,7 +1,7 @@
 @import '../../color';
 @import '../../utils';
 
-.login-container {
+.auth-container {
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -19,23 +19,13 @@
     margin-top: 16px;
 	}
 	
-	.login-form {
+	.auth-form {
 		border-bottom: 2px solid $silver-chalice;
 	
 		.logo {
 			@include logo-size;
-			margin: 28px auto 0;
+			margin: 0 auto 15px auto;
 			display: block;
-		}
-	
-		.form-actions {
-			position: relative;
-			margin-bottom: 16px;
-	
-			.fill-btn {
-				@include fill-green-btn;
-				margin-top: 24px;
-			}
 		}
 	}
 }

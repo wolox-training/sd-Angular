@@ -1,10 +1,9 @@
-<app-auth-form>
-	<div class="input-elements">
-		<label class="label" for="email">Email</label>
-		<input type="text" class="input" name="email">
-	</div>
-	<div class="input-elements">
-		<label class="label" for="password">Password</label>
-		<input type="password" class="input" name="password">
-	</div>
+<app-auth-form [secondaryButtonText]="secondaryButtonText">
+	<form [formGroup]>
+		<app-text-input [inputName]="'name'" [inputLabel]="'Name'" [inputType]="'text'"></app-text-input>
+		<app-text-input [inputName]="'password'" [inputLabel]="'Password'" [inputType]="'password'"></app-text-input>
+		<div class="form-actions">
+			<a href="" class="fill-btn" type=button>Login</a>
+		</div>
+	</form>
 </app-auth-form>
