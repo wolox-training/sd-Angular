@@ -12,7 +12,7 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
     AppComponent,
     AuthFormComponent,
     LoginFormComponent,
-    SignupFormComponent
+    SignupFormComponent,
   ],
   imports: [
     BrowserModule,

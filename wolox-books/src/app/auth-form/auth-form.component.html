@@ -1,4 +1,10 @@
 <div class="login-container">
-	<ng-content></ng-content>
+	<form class="login-form">
+		<img class= "logo" src="assets/logo.png" alt="Wolox logo">
+		<ng-content></ng-content>
+		<div class="form-actions">
+			<a href="" class="fill-btn" type=button>Login</a>
+		</div>
+	</form>
 	<button class="no-fill-btn" type=button>Sign up</button>
 </div>
