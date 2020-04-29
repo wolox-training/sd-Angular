@@ -1,5 +1,6 @@
 @import 'color';
 @import 'utils';
+@import 'layers';
 
 .nav-bar {
   width: 100%;
@@ -9,6 +10,7 @@
   top: 0;
   background: white;
   border-top: 6px solid $cerulean;
+  z-index: $mid-layer;
   @include box-shadow;
 
   .content {
