@@ -4,10 +4,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AuthFormComponent } from './auth-form/auth-form.component';
-import { LoginFormComponent } from './login-form/login-form.component';
-import { SignupFormComponent } from './signup-form/signup-form.component';
-import { TextInputComponent } from './text-input/text-input.component';
+import { AuthFormComponent } from './screens/auth/components/auth-form/auth-form.component';
+import { LoginFormComponent } from './screens/auth/screens/login/components/login-form/login-form.component';
+import { SignupFormComponent } from './screens/auth/screens/signup/components/signup-form/signup-form.component';
+import { TextInputComponent } from './components/text-input/text-input.component';
 
 @NgModule({
   declarations: [
