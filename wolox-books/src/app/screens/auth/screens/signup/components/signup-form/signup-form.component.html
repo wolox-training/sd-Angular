@@ -1,4 +1,4 @@
-<app-auth-form [secondaryButtonText]="secondaryButtonText">
+<app-auth-form [secondaryButtonText]="secondaryButtonText" [secondaryButtonRedirectionUrl]="secondaryButtonRedirectionUrl">
 	<form [formGroup]="signUpForm" (ngSubmit)="onSubmit(signUpForm.value)">
 		<!--Name input-->
 		<app-text-input [inputName]="'name'" [inputLabel]="'Name'" [inputType]="'text'" [parentForm]="signUpForm"></app-text-input>

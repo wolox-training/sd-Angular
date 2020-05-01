@@ -3,5 +3,5 @@
 		<img class= "logo" src="assets/logo.png" alt="Wolox logo">
 		<ng-content></ng-content>
 	</div>
-	<button class="no-fill-btn" type=button>{{ secondaryButtonText }}</button>
+	<button class="no-fill-btn" type=button [routerLink]="secondaryButtonRedirectionUrl">{{ secondaryButtonText }}</button>
 </div>
