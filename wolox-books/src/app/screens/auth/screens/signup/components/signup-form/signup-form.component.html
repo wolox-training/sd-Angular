@@ -26,6 +26,9 @@
 		<div class="form-error" *ngIf="signUpForm.get('password').errors?.pattern && (signUpForm.get('password').touched || signUpForm.get('password').dirty)">
 			Please include at least one number and one capital letter.
 		</div>
+		<div class="form-error" *ngIf="signUpForm.get('password').errors?.minlength && (signUpForm.get('password').touched || signUpForm.get('password').dirty)">
+			Must be at least 6 characters long.
+		</div>
 		<!--/ Password Input-->
 
 		<!--Password Confirmation Input-->
@@ -36,7 +39,7 @@
 		<!--/ Password Confirmation Input-->
 
 		<div class="form-actions">
-			<button class="fill-btn" type="submit">Sign Up</button>
+			<button [disabled]="!signUpForm.valid" class="fill-btn submit" type="submit">Sign Up</button>
 		</div>
 	</form>
 </app-auth-form>

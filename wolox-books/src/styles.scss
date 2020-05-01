@@ -10,5 +10,9 @@
 	.fill-btn {
 		@include fill-green-btn;
 		margin-top: 24px;
+
+		&:disabled {
+			cursor: not-allowed;
+		}
 	}
 }
