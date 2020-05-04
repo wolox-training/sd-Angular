@@ -1,8 +1,8 @@
 $navbar-height: 70px;
-$screen-xl-max: 1024px;
+$screen-sm-max: 848px;
 
-@mixin xl {
-  @media (max-width: #{$screen-xl-max}) {
+@mixin sm {
+  @media (max-width: #{$screen-sm-max}) {
     @content;
   }
 }
