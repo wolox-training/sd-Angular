@@ -1,0 +1,40 @@
+@import '../../../../../../../color';
+@import '../../../../../../../utils';
+
+$title-font-size: 16px;
+
+.cards-container {
+  width: 100%;
+  max-width: 900px;
+  margin: ($navbar-height + 34px) auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  .mini-card {
+    width: 100%;
+    max-width: 198px;
+    margin-bottom: 36px;
+    padding: 28px;
+    transition: transform 0.2s ease-out;
+    @include box-shadow;
+
+    .title {
+      @include bold-text($title-font-size);
+      margin: 8px 0;
+    }
+
+    .author {
+      font-size: 14px;
+      color: $nevada-gray;
+    }
+
+    .mini-cover-image {
+      width: 142px
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}

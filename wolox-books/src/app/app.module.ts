@@ -9,6 +9,8 @@ import { AuthFormComponent } from './screens/auth/components/auth-form/auth-form
 import { LoginFormComponent } from './screens/auth/screens/login/components/login-form/login-form.component';
 import { SignupFormComponent } from './screens/auth/screens/signup/components/signup-form/signup-form.component';
 import { TextInputComponent } from './components/text-input/text-input.component';
+import { HomeComponent } from './screens/home/screens/book-list/components/home/home.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { TextInputComponent } from './components/text-input/text-input.component
     LoginFormComponent,
     SignupFormComponent,
     TextInputComponent,
+    HomeComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
