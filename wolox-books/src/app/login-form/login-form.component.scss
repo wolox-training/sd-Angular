@@ -1,0 +1,22 @@
+@import '../../color';
+@import '../../utils';
+
+.input-elements {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+
+	.label {
+		margin-top: 16px;
+		margin-bottom: 8px;
+		font-size: 16px;
+	}
+
+	.input {
+		@include form-element;
+	}
+}
+
+.last-input {
+	margin-bottom: 24px;
+}
