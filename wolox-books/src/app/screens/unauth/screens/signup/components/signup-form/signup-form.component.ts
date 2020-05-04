@@ -5,7 +5,7 @@ import { User } from 'src/app/models/user';
 import { Router } from '@angular/router';
 
 const SECONDARY_BUTTON_TEXT = 'Log In';
-const SECONDARY_BUTTON_REDIRECTION_URL = '/login'
+const SECONDARY_BUTTON_REDIRECTION_URL = '/unauth/login'
 
 @Component({
   selector: 'app-signup-form',
@@ -52,7 +52,7 @@ export class SignupFormComponent implements OnInit {
     this.userService.createUser(user).subscribe(
       data => {
         console.log('Sucess!', data),
-        this.router.navigate(['login']);
+        this.router.navigate(['unauth/login']);
       },
       error => console.log('Error!', error)
     );
