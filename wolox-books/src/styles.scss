@@ -1,2 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'equalizer';
+@import 'color';
+@import 'utils';
+
+.form-actions {
+	position: relative;
+	margin-bottom: 16px;
+
+	.fill-btn {
+		@include fill-green-btn;
+		margin-top: 24px;
+
+		&:disabled {
+			cursor: not-allowed;
+		}
+	}
+}
