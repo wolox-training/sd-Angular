@@ -1,5 +1,5 @@
-@import '../../color';
-@import '../../utils';
+@import '../../../../../color';
+@import '../../../../../utils';
 
 .auth-container {
   display: flex;
@@ -15,7 +15,7 @@
   .no-fill-btn {
     @include no-fill-green-btn;
     margin: 16px 0 24px 0;
-	}
+  }
 	
 	.auth-form {
 		border-bottom: 2px solid $silver-chalice;
