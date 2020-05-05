@@ -15,10 +15,8 @@ const SECONDARY_BUTTON_REDIRECTION_URL = '/unauth/signup';
 
 export class LoginFormComponent implements OnInit {
 
-  // Button text
   secondaryButtonText: string = SECONDARY_BUTTON_TEXT;
 
-  // Secondary button redirection url
   secondaryButtonRedirectionUrl: string = SECONDARY_BUTTON_REDIRECTION_URL;
 
   constructor(private formBuilder: FormBuilder, private userService: UserService, private router: Router) { }
