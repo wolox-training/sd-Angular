@@ -1,15 +1,15 @@
 <app-auth-form [secondaryButtonText]="secondaryButtonText" [secondaryButtonRedirectionUrl]="secondaryButtonRedirectionUrl">
 	<form [formGroup]="signUpForm" (ngSubmit)="onSubmit(signUpForm.value)">
-		<app-text-input [inputName]="'name'" [inputLabel]="'Name'" [inputType]="'text'" [parentForm]="signUpForm"></app-text-input>	
-		<app-text-input [inputName]="'lastName'" [inputLabel]="'Last Name'" [inputType]="'text'" [parentForm]="signUpForm"></app-text-input>
-		<app-text-input [inputName]="'email'" [inputLabel]="'Email'" [inputType]="'email'" [parentForm]="signUpForm"></app-text-input>
+		<app-text-input inputName="name" inputLabel="Name" inputType="text" [parentForm]="signUpForm"></app-text-input>	
+		<app-text-input inputName="lastName" inputLabel="Last Name" inputType="text" [parentForm]="signUpForm"></app-text-input>
+		<app-text-input inputName="email" inputLabel="Email" inputType="email" [parentForm]="signUpForm"></app-text-input>
 		<p class="form-error" *ngIf="signUpForm.get('email').errors?.required && (signUpForm.get('email').touched || signUpForm.get('email').dirty)">
 			Email is required.
 		</p>
 		<p class="form-error" *ngIf="signUpForm.get('email').errors?.email && (signUpForm.get('email').touched || signUpForm.get('email').dirty)">
 			Invalid email format.
 		</p>
-		<app-text-input [inputName]="'password'" [inputLabel]="'Password'" [inputType]="'password'" [parentForm]="signUpForm"></app-text-input>
+		<app-text-input inputName="password" inputLabel="Password" inputType="password" [parentForm]="signUpForm"></app-text-input>
 		<p class="form-error" *ngIf="signUpForm.get('password').errors?.required && (signUpForm.get('password').touched || signUpForm.get('password').dirty)">
 			Password is required.
 		</p>
@@ -19,7 +19,7 @@
 		<p class="form-error" *ngIf="signUpForm.get('password').errors?.minlength && (signUpForm.get('password').touched || signUpForm.get('password').dirty)">
 			Must be at least 6 characters long.
 		</p>
-		<app-text-input [inputName]="'passwordConfirmation'" [inputLabel]="'Password Confirmation'" [inputType]="'password'" [parentForm]="signUpForm"></app-text-input>
+		<app-text-input inputName="passwordConfirmation" inputLabel="Password Confirmation" inputType="password" [parentForm]="signUpForm"></app-text-input>
 		<p class="form-error" *ngIf="signUpForm.errors?.notMatchingPasswords && (signUpForm.get('passwordConfirmation').touched || signUpForm.get('passwordConfirmation').dirty)">
 			Password confirmation do not match.
 		</p>

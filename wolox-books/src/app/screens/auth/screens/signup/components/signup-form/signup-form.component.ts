@@ -17,10 +17,8 @@ export class SignupFormComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private userService: UserService, private router: Router) {}
 
-  // Secondary button redirection url
   secondaryButtonText: string = SECONDARY_BUTTON_TEXT;
 
-  // Secondary button redirection url
   secondaryButtonRedirectionUrl: string = SECONDARY_BUTTON_REDIRECTION_URL;
 
   signUpForm: FormGroup;
