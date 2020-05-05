@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
-import { HomeComponent } from 'src/app/screens/auth/home/screens/book-list/components/home/home.component';
 
 const SECONDARY_BUTTON_TEXT = 'Sign Up';
 const SECONDARY_BUTTON_REDIRECTION_URL = '/unauth/signup';

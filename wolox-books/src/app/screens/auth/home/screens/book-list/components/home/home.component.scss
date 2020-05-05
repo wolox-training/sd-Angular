@@ -29,6 +29,14 @@ $title-font-size: 16px;
       color: $nevada-gray;
     }
 
+    .title,
+    .author{
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 142px;
+      white-space: nowrap;
+    }
+
     .mini-cover-image {
       width: 142px
     }
