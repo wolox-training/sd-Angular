@@ -1,10 +1,10 @@
 <app-auth-form [secondaryButtonText]="secondaryButtonText" [secondaryButtonRedirectionUrl]="secondaryButtonRedirectionUrl">
 	<form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
-		<app-text-input [inputName]="'email'" [inputLabel]="'Email'" [inputType]="'text'" [parentForm]="loginForm"></app-text-input>
+		<app-text-input inputName="email" inputLabel="Email" inputType="text" [parentForm]="loginForm"></app-text-input>
 		<p class="form-error" *ngIf="loginForm.get('email').errors?.required && (loginForm.get('email').touched || loginForm.get('email').dirty)">
 			Email is required.
 		</p>
-		<app-text-input [inputName]="'password'" [inputLabel]="'Password'" [inputType]="'password'" [parentForm]="loginForm"></app-text-input>
+		<app-text-input inputName="password" inputLabel="Password" inputType="password" [parentForm]="loginForm"></app-text-input>
 		<p class="form-error" *ngIf="loginForm.get('password').errors?.required && (loginForm.get('password').touched || loginForm.get('password').dirty)">
 			Password is required.
 		</p>
