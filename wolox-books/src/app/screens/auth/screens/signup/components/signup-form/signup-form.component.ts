@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ValidationErrors, ValidatorFn } from '@angular/forms';
+import { UserService } from 'src/app/services/user.service';
+import { User } from 'src/app/models/user';
 
 const SECONDARY_BUTTON_TEXT = 'Log In';
 
@@ -11,9 +13,7 @@ const SECONDARY_BUTTON_TEXT = 'Log In';
 
 export class SignupFormComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder) { 
-
-  }
+  constructor(private formBuilder: FormBuilder, private userService: UserService) {}
 
   secondaryButtonText: string = SECONDARY_BUTTON_TEXT;
   signUpForm: FormGroup;
@@ -24,7 +24,7 @@ export class SignupFormComponent implements OnInit {
         name: '',
         lastName: '',
         email: ['', [Validators.required, Validators.email]],
-        password: ['', [Validators.required, Validators.pattern('^(?=.*[0-9])(?=.*[A-Z]).*$')]],
+        password: ['', [Validators.required, Validators.minLength(6), Validators.pattern('^(?=.*[0-9])(?=.*[A-Z]).*$')]],
         passwordConfirmation: ['', Validators.required]
       },
       {
@@ -33,8 +33,19 @@ export class SignupFormComponent implements OnInit {
     );
   }
 
-  onSubmit(signUpData) {
-    console.log(signUpData);
+  onSubmit(signUpData:any) {
+    const user: User = new User(
+      signUpData.name,
+      signUpData.lastName,
+      signUpData.email,
+      signUpData.password,
+      signUpData.passwordConfirmation
+    );
+
+    this.userService.createUser(user).subscribe(
+      response => console.log('Sucess!', response),
+      error => console.log('Error!', error)
+    );
   }
 
   private passwordMatchValidator: ValidatorFn = (control: FormGroup): ValidationErrors | null => {
