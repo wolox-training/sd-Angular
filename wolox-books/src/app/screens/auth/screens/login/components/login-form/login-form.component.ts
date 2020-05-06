@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
-import { HttpResponse } from '@angular/common/http';
+import { HomeComponent } from 'src/app/screens/home/screens/book-list/components/home/home.component';
 
 const SECONDARY_BUTTON_TEXT = 'Sign Up';
 const SECONDARY_BUTTON_REDIRECTION_URL = '/signup';
@@ -37,8 +37,10 @@ export class LoginFormComponent implements OnInit {
   onSubmit(loginData:any) {
     this.userService.authenticateUser(loginData.email, loginData.password).subscribe(
       res => {
-        console.log('Headers', res.headers);
-        console.log('Body', res.body.data);
+        localStorage.setItem('accessToken', res.headers.get('access-token'));
+        localStorage.setItem('client', res.headers.get('client'));
+        localStorage.setItem('uid', res.headers.get('uid'));
+        this.router.navigate(['home']);
       },
       error => console.log('Error!', error.error.errors)
     );
