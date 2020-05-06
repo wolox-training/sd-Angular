@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
-import { HomeComponent } from 'src/app/screens/home/screens/book-list/components/home/home.component';
+import { HomeComponent } from 'src/app/screens/auth/home/screens/book-list/components/home/home.component';
 
 const SECONDARY_BUTTON_TEXT = 'Sign Up';
-const SECONDARY_BUTTON_REDIRECTION_URL = '/signup';
+const SECONDARY_BUTTON_REDIRECTION_URL = '/unauth/signup';
 
 @Component({
   selector: 'app-login-form',
@@ -15,10 +15,8 @@ const SECONDARY_BUTTON_REDIRECTION_URL = '/signup';
 
 export class LoginFormComponent implements OnInit {
 
-  // Button text
   secondaryButtonText: string = SECONDARY_BUTTON_TEXT;
 
-  // Secondary button redirection url
   secondaryButtonRedirectionUrl: string = SECONDARY_BUTTON_REDIRECTION_URL;
 
   constructor(private formBuilder: FormBuilder, private userService: UserService, private router: Router) { }
@@ -40,7 +38,7 @@ export class LoginFormComponent implements OnInit {
         localStorage.setItem('accessToken', res.headers.get('access-token'));
         localStorage.setItem('client', res.headers.get('client'));
         localStorage.setItem('uid', res.headers.get('uid'));
-        this.router.navigate(['home']);
+        this.router.navigate(['auth/home']);
       },
       error => console.log('Error!', error.error.errors)
     );

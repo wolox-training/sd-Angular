@@ -11,8 +11,20 @@ export class UserService {
   constructor(private httpClient: HttpClient) {}
 
   readonly SIGN_UP_URL = environment.apiBaseUrl + '/users';
+  readonly LOGIN_URL = environment.apiBaseUrl + '/users/sign_in';
 
   createUser(newUser: User){
     return this.httpClient.post<any>(this.SIGN_UP_URL, newUser.toJson());
+  }
+
+  authenticateUser(email: string, password: string){
+    return this.httpClient.post<any>(this.LOGIN_URL, this.loginData(email, password), { observe: 'response' });
+  }
+
+  private loginData(email: string, password: string){
+    return {
+      'email': email,
+      'password': password
+    };
   }
 }
