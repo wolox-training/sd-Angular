@@ -21,4 +21,10 @@ export class BooksService {
       { params: params }
     );
   }
+
+  fetchBookById(id: string){
+    return this.httpClient.get<Book>(
+      this.BOOKS_LIST_URL + `/${id}`
+    );
+  }
 }

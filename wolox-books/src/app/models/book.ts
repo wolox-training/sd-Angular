@@ -1,25 +1,45 @@
 export class Book {
 	constructor(
-		private author :string,
-		private title :string,
-		private imageUrl :string,
-		private editor :string,
-		private year :string,
-		private genre :string,
-		private createdAt :string,
-		private updatedAt :string
+		private _author :string,
+		private _title :string,
+		private _imageUrl :string,
+		private _editor :string,
+		private _year :string,
+		private _genre :string,
+		private _createdAt :string,
+		private _updatedAt :string
 	) {}
+
+	get author(){
+		return this._author;
+	}
+
+	get title(){
+		return this._title;
+	}
+
+	get genre(){
+		return this._genre;
+	}
+
+	get year(){
+		return this._year;
+	}
+
+	get editor(){
+		return this._editor;
+	}
 
 	toJson(){
 		return {
-			author: this.author,
-			title: this.title,
-			image_url: this.imageUrl,
-			editor: this.editor,
-			year: this.year,
-			genre: this.genre,
-			created_at: this.createdAt,
-			updated_at: this.updatedAt
+			author: this._author,
+			title: this._title,
+			image_url: this._imageUrl,
+			editor: this._editor,
+			year: this._year,
+			genre: this._genre,
+			created_at: this._createdAt,
+			updated_at: this._updatedAt
 		};
 	}
 }

@@ -16,6 +16,7 @@ import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './interceptors/token-interceptor.service';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { SearchFilterPipe } from './pipes/search-filter.pipe';
+import { DetailComponent } from './screens/auth/book-detail/components/detail/detail.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { SearchFilterPipe } from './pipes/search-filter.pipe';
     HomeComponent,
     NavbarComponent,
     SearchBarComponent,
-    SearchFilterPipe
+    SearchFilterPipe,
+    DetailComponent
   ],
   imports: [
     BrowserModule,

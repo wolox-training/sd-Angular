@@ -4,7 +4,7 @@
 	<app-search-bar class="book-search" [placeholder]="searchBarPlaceHolderTxt" (filter)="filterBooks = $event" ></app-search-bar>
 	<div class="cards-container">
 		<div *ngFor="let book of currentPageContent | searchFilter:filterBooks">
-			<div class="mini-card">
+			<div class="mini-card" routerLink="/auth/books/{{book.id}}">
 				<img class="mini-cover-image" src="assets/book-cover.png" alt="book cover image">
 				<p class="title">{{book.title}}</p>
 				<p class="author">{{book.author}}</p>   
