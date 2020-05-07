@@ -7,7 +7,7 @@ import { BooksService } from 'src/app/services/books.service';
   styleUrls: ['./home.component.scss']
 })
 
-export class HomeComponent implements OnInit, OnChanges {
+export class HomeComponent implements OnInit {
   constructor(private booksService: BooksService) { }
 
   searchBarPlaceHolderTxt: string = 'Search books by title...';
@@ -23,9 +23,5 @@ export class HomeComponent implements OnInit, OnChanges {
       },
       error => console.log('Error!', error.error.errors)
     );
-  }
-
-  ngOnChanges(){
-    console.log(this.filterBooks);
   }
 }
