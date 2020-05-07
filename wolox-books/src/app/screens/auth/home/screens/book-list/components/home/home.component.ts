@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BooksService } from 'src/app/services/books.service';
+import { Book } from 'src/app/models/book';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,7 @@ import { BooksService } from 'src/app/services/books.service';
 export class HomeComponent implements OnInit {
   constructor(private booksService: BooksService) { }
 
-  currentPageContent: any[];
+  currentPageContent: Book[];
 
   ngOnInit(): void {
     this.booksService.fetchBooks(1).subscribe(
