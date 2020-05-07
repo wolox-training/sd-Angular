@@ -20,9 +20,32 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 
     .logo {
       @include logo-size;
+    }
+
+    .shopping-cart {
+      width: 15px;
+      position: absolute;
+      right: 80px;
+    }
+
+    .shopping-cart-count {
+      display: flex;
+      align-items: center; 
+      justify-content: center;
+      text-align: center;
+      width: 12px;
+      height: 12px;
+      background-color: $cerulean;
+      font-size: 8px;
+      border-radius: 50%;
+      color: white;
+      position: absolute;
+      right: 72px;
+      top: 24px;
     }
   }
 }
