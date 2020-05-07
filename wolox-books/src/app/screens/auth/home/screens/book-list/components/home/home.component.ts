@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { BooksService } from 'src/app/services/books.service';
 
 @Component({
@@ -6,9 +6,14 @@ import { BooksService } from 'src/app/services/books.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
+
 export class HomeComponent implements OnInit {
   constructor(private booksService: BooksService) { }
 
+  searchBarPlaceHolderTxt: string = 'Search books by title...';
+  filterName: string = 'filterBooks';
+
+  filterBooks: any;
   currentPageContent: any[];
 
   ngOnInit(): void {
