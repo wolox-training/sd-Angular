@@ -12,9 +12,8 @@ import { CartCountService } from 'src/app/services/cart-count.service';
 export class HomeComponent implements OnInit {
   constructor(private booksService: BooksService, private cartCountService: CartCountService) { }
 
-  searchBarPlaceHolderTxt: string = 'Search books by title...';
-  filterName: string = 'filterBooks';
-  filterBooks: any;
+  searchBarPlaceHolderTxt = 'Search books by title...';
+  searchInput: string;
   currentPageContent: Book[];
   cartCount: number;
 

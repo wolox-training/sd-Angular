@@ -1,15 +1,16 @@
 <app-navbar></app-navbar>
 
 <div class="main-container">
-	<app-search-bar class="book-search" [placeholder]="searchBarPlaceHolderTxt" (filter)="filterBooks = $event" ></app-search-bar>
+	<app-search-bar class="book-search" [placeholder]="searchBarPlaceHolderTxt" (filter)="searchInput = $event" ></app-search-bar>
 	<div class="cards-container">
-		<div *ngFor="let book of currentPageContent | searchFilter:filterBooks">
-			<div class="mini-card" routerLink="/auth/books/{{book.id}}">
+
+		<div *ngFor="let book of currentPageContent | searchFilter:searchInput">
+			<div class="mini-card">
 				<img class="mini-cover-image" src="assets/book-cover.png" alt="book cover image">
 				<p class="title">{{book.title}}</p>
 				<p class="author">{{book.author}}</p>
 				<img class="plus-btn" src="assets/plus.png" alt="Plus button" (click)="addToCart()">
 			</div>
 		</div>
-	</div>	
+	</div>
 </div>
