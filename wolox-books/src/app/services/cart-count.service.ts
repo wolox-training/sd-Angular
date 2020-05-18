@@ -1,19 +1,20 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { Observable } from 'rxjs';
+import { Book } from '../models/book';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartCountService {
 
-  private countSource = new BehaviorSubject<number>(0);
-  currentCount: Observable<number> = this.countSource.asObservable();
+  private addedBooksSource = new BehaviorSubject<Book[]>([]);
+  currentAddedBooks: Observable<Book[]> = this.addedBooksSource.asObservable();
 
   constructor() { }
 
-  changeCount(count: number){
+  changeBooksList(books: Book[]){
     event.stopPropagation();
-    this.countSource.next(count);
+    this.addedBooksSource.next(books);
   }
 }

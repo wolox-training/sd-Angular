@@ -17,6 +17,7 @@ import { TokenInterceptorService } from './interceptors/token-interceptor.servic
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { SearchFilterPipe } from './pipes/search-filter.pipe';
 import { DetailComponent } from './screens/auth/book-detail/components/detail/detail.component';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { DetailComponent } from './screens/auth/book-detail/components/detail/de
     NavbarComponent,
     SearchBarComponent,
     SearchFilterPipe,
-    DetailComponent
+    DetailComponent,
+    ShoppingCartComponent
   ],
   imports: [
     BrowserModule,

@@ -15,11 +15,11 @@ export class HomeComponent implements OnInit {
   searchBarPlaceHolderTxt = 'Search books by title...';
   searchInput: string;
   currentPageContent: Book[];
-  cartCount: number;
+  cartBooks: Book[];
 
   ngOnInit(): void {
-    this.cartCountService.currentCount.subscribe(
-      currentCount => this.cartCount = currentCount
+    this.cartCountService.currentAddedBooks.subscribe(
+      currentAddedBooks => this.cartBooks = currentAddedBooks
     );
 
     this.booksService.fetchBooks(1).subscribe(
@@ -30,7 +30,8 @@ export class HomeComponent implements OnInit {
     );
   }
 
-  addToCart(){
-    this.cartCountService.changeCount(this.cartCount += 1);
+  addToCart(book: Book){
+    this.cartBooks.push(book);
+    this.cartCountService.changeBooksList(this.cartBooks);
   }
 }

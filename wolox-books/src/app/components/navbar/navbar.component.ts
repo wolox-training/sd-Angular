@@ -9,13 +9,10 @@ import { CartCountService } from 'src/app/services/cart-count.service';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private router: Router, private cartCountService: CartCountService) { }
+  constructor(private router: Router) { }
   cartCount: number;
 
   ngOnInit(): void {
-    this.cartCountService.currentCount.subscribe(
-      currentCount => this.cartCount = currentCount
-    );
   }
 
   logOut(){
