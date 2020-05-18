@@ -1,5 +1,5 @@
-@import '../../../../../../../color';
-@import '../../../../../../../utils';
+@import '../../../../../../../../color';
+@import '../../../../../../../../utils';
 
 $title-font-size: 16px;
 
@@ -27,6 +27,14 @@ $title-font-size: 16px;
     .author {
       font-size: 14px;
       color: $nevada-gray;
+    }
+
+    .title,
+    .author{
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 142px;
+      white-space: nowrap;
     }
 
     .mini-cover-image {

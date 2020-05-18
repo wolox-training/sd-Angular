@@ -1,0 +1,10 @@
+<app-navbar></app-navbar>
+<div class="cards-container">
+	<div *ngFor="let book of currentPageContent">
+		<div class="mini-card">
+			<img class="mini-cover-image" src="assets/book-cover.png" alt="book cover image">
+			<p class="title">{{book.title}}</p>
+			<p class="author">{{book.author}}</p>   
+		</div>
+	</div>
+</div>

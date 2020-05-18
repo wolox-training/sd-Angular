@@ -1,16 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AuthFormComponent } from './screens/auth/components/auth-form/auth-form.component';
-import { LoginFormComponent } from './screens/auth/screens/login/components/login-form/login-form.component';
-import { SignupFormComponent } from './screens/auth/screens/signup/components/signup-form/signup-form.component';
+import { AuthFormComponent } from './screens/unauth/components/auth-form/auth-form.component';
+import { LoginFormComponent } from './screens/unauth/screens/login/components/login-form/login-form.component';
+import { SignupFormComponent } from './screens/unauth/screens/signup/components/signup-form/signup-form.component';
 import { TextInputComponent } from './components/text-input/text-input.component';
-import { HomeComponent } from './screens/home/screens/book-list/components/home/home.component';
+import { HomeComponent } from './screens/auth/home/screens/book-list/components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { AuthGuard } from './auth.guard';
+import { TokenInterceptorService } from './interceptors/token-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,14 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    AuthGuard, 
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

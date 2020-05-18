@@ -21,6 +21,10 @@ export class UserService {
     return this.httpClient.post<any>(this.LOGIN_URL, this.loginData(email, password), { observe: 'response' });
   }
 
+  loggedIn(){
+    return !!localStorage.getItem('accessToken');
+  }
+
   private loginData(email: string, password: string){
     return {
       'email': email,
