@@ -11,9 +11,8 @@ import { Book } from 'src/app/models/book';
 export class HomeComponent implements OnInit {
   constructor(private booksService: BooksService) { }
 
-  searchBarPlaceHolderTxt: string = 'Search books by title...';
-  filterName: string = 'filterBooks';
-  filterBooks: any;
+  searchBarPlaceHolderTxt = 'Search books by title...';
+  searchInput: string;
   currentPageContent: Book[];
 
   ngOnInit(): void {
