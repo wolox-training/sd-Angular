@@ -33,6 +33,10 @@
             "scripts": []
           },
           "configurations": {
+            "en": {
+              "localize": ["en"],
+              "main": "src/main.ts"
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -69,6 +73,9 @@
             "browserTarget": "wolox-books:build"
           },
           "configurations": {
+            "en": {
+              "browserTarget": "wolox-books:build:en"
+            },
             "production": {
               "browserTarget": "wolox-books:build:production"
             }
@@ -121,6 +128,12 @@
               "devServerTarget": "wolox-books:serve:production"
             }
           }
+        }
+      },
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "en": "src/locale/messages.en.xlf"
         }
       }
     }

@@ -21,6 +21,10 @@ import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.
 import { StoreModule } from '@ngrx/store';
 import { reducer } from './store/books.reducer';
 import { NgxSmartModalModule } from 'ngx-smart-modal';
+import localeEn from '@angular/common/locales/en';
+import { registerLocaleData } from '@angular/common';
+
+registerLocaleData(localeEn);
 
 @NgModule({
   declarations: [
