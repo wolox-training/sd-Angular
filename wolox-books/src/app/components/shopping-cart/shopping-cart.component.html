@@ -1,4 +1,14 @@
-<div class="content">
+<div class="content" (click)="ngxSmartModalService.getModal('shopping-cart-modal').open()">
 	<img class="shopping-cart" src="assets/cart.png" alt="Shopping cart">
-	<p class="shopping-cart-count">{{addedBooks.length}}</p>
+	<p class="shopping-cart-count">{{(cartBooks | async).length}}</p>
 </div>
+
+<ngx-smart-modal identifier="shopping-cart-modal" [customClass]="'shopping-cart-modal'">
+	<p class="modal-title">Your shopping cart</p>
+	<div class="list-container">
+		<div class="book-element" *ngFor="let book of cartBooks | async; let i = index">
+			<p class="book-text">{{book.title}} - {{book.author}}</p>
+			<img class="delete-img" src="/assets/trash.png" alt="delete book image" (click)="deleteBook(i)">
+		</div>
+	</div>
+</ngx-smart-modal>
