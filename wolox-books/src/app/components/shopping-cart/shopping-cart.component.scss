@@ -1,0 +1,26 @@
+@import '../../../color';
+
+.content {
+	position: relative;
+
+	.shopping-cart {
+		width: 15px;
+	}
+	
+	.shopping-cart-count {
+		display: flex;
+		align-items: center; 
+		justify-content: center;
+		text-align: center;
+		width: 12px;
+		height: 12px;
+		background-color: $cerulean;
+		font-size: 8px;
+		border-radius: 50%;
+		color: white;
+		position: absolute;
+		left: 12px;
+    bottom: 10px;
+	}
+	
+}

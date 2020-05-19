@@ -20,9 +20,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 
     .logo {
       @include logo-size;
+    }
+
+    .shopping-cart {
+      position: absolute;
+      right: 80px;
     }
   }
 }

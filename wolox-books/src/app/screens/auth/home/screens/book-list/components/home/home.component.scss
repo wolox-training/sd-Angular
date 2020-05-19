@@ -21,6 +21,7 @@ $title-font-size: 16px;
       margin-bottom: 36px;
       padding: 28px;
       transition: transform 0.2s ease-out;
+      position: relative;
       @include box-shadow;
   
       .title {
@@ -47,6 +48,14 @@ $title-font-size: 16px;
   
       &:hover {
         transform: scale(1.1);
+      }
+
+      .plus-btn {
+        width: 25px;
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        cursor: pointer;
       }
     }
   }
