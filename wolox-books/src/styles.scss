@@ -26,6 +26,27 @@ $dialog-position-top: 200px;
 
 .shopping-cart-modal {
 
+	.empty-cart {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		
+		.empty-cart-img {
+			width: 180px;
+			margin: 50px;
+		}
+
+		.empty-cart-title-txt {
+			font-weight: bold;
+			font-size: 28px;
+			margin-bottom: 20px;
+		}
+
+		.empty-cart-txt {
+			font-size: 18px;
+		}
+	}
+
 	.nsm-content {
 		border-radius: 15px;
 		height: 400px;

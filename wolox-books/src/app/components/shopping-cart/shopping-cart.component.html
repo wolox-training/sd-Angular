@@ -5,6 +5,11 @@
 
 <ngx-smart-modal identifier="shopping-cart-modal" [customClass]="'shopping-cart-modal'">
 	<p class="modal-title">Your shopping cart</p>
+	<div class="empty-cart" *ngIf="(cartBooks | async).length == 0">
+		<img class="empty-cart-img" src="/assets/empty-cart.png" alt="Empty Cart">
+		<p class="empty-cart-title-txt">CART IS EMPTY</p>
+		<p class="empty-cart-txt">It looks like you don't have items in your shopping cart</p>
+	</div>
 	<div class="list-container">
 		<div class="book-element" *ngFor="let book of cartBooks | async; let i = index">
 			<p class="book-text">{{book.title}} - {{book.author}}</p>
