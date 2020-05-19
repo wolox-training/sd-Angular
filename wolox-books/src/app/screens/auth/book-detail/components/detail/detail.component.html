@@ -1,5 +1,5 @@
 <div class="container">
-	<a routerLink="/auth/home" class="back-btn">Atrás</a>
+	<a routerLink="/auth/home" class="back-btn" i18n="book information|Back link text">Atrás</a>
 	<div class="card">
 		<div class="header">
 			<h1 class="title">{{book.title}}</h1>
@@ -8,15 +8,15 @@
 		<div class="card-body">
 			<div class="detail">
 				<div class="attribute">
-					<p class="label">Autor del libro:</p>
+					<p i18n="book information|Person(s) who wrote the book" class="label">Autor del libro:</p>
 					<p class="value">{{book.author}}</p>
 				</div>
 				<div class="attribute">
-					<p class="label">Editorial:</p>
+					<p i18n="book information|Publisher that published the book" class="label">Editorial:</p>
 					<p class="value">{{book.editor}}</p>
 				</div>
 				<div class="attribute">
-					<p class="label">Año de publicado:</p>
+					<p i18n="book information|Year in which the book was published" class="label">Año de publicado:</p>
 					<p class="value">{{book.year}}</p>
 				</div>
 			</div>
