@@ -3,6 +3,7 @@
 <div class="main-container">
 	<app-search-bar class="book-search" [placeholder]="searchBarPlaceHolderTxt" (filter)="searchInput = $event" ></app-search-bar>
 	<div class="cards-container">
+
 		<div *ngFor="let book of currentPageContent | searchFilter:searchInput">
 			<div class="mini-card">
 				<img class="mini-cover-image" src="assets/book-cover.png" alt="book cover image">

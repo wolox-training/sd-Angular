@@ -4,6 +4,7 @@ import { LoginFormComponent } from './screens/unauth/screens/login/components/lo
 import { SignupFormComponent } from './screens/unauth/screens/signup/components/signup-form/signup-form.component';
 import { HomeComponent } from './screens/auth/home/screens/book-list/components/home/home.component';
 import { AuthGuard } from './auth.guard';
+import { DetailComponent } from './screens/auth/book-detail/components/detail/detail.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
       { 
         path: 'home', 
         component: HomeComponent
+      },
+      {
+        path: 'books/:id',
+        component: DetailComponent
       }
     ]
   },
