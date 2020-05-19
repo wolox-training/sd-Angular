@@ -1,7 +1,9 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
 import { BooksService } from 'src/app/services/books.service';
 import { Book } from 'src/app/models/book';
-import { CartCountService } from 'src/app/services/cart-count.service';
+import { Store } from '@ngrx/store';
+import { AppState } from 'src/app/app.state';
+import * as BookActions from '../../../../../../../store/book.actions';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +12,7 @@ import { CartCountService } from 'src/app/services/cart-count.service';
 })
 
 export class HomeComponent implements OnInit {
-  constructor(private booksService: BooksService, private cartCountService: CartCountService) { }
+  constructor(private booksService: BooksService, private store: Store<AppState>) { }
 
   searchBarPlaceHolderTxt = 'Search books by title...';
   searchInput: string;
@@ -18,10 +20,6 @@ export class HomeComponent implements OnInit {
   cartBooks: Book[];
 
   ngOnInit(): void {
-    this.cartCountService.currentAddedBooks.subscribe(
-      currentAddedBooks => this.cartBooks = currentAddedBooks
-    );
-
     this.booksService.fetchBooks(1).subscribe(
       res => {
         this.currentPageContent = res.page;
@@ -31,7 +29,7 @@ export class HomeComponent implements OnInit {
   }
 
   addToCart(book: Book){
-    this.cartBooks.push(book);
-    this.cartCountService.changeBooksList(this.cartBooks);
+    event.stopPropagation();
+    this.store.dispatch(new BookActions.AddBook(book));
   }
 }

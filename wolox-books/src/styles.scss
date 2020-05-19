@@ -3,6 +3,9 @@
 @import 'color';
 @import 'utils';
 
+$dialog-position-top: 200px;
+@import '~ngx-smart-modal/ngx-smart-modal';
+
 .form-actions {
 	position: relative;
 	margin-bottom: 16px;
@@ -13,6 +16,58 @@
 
 		&:disabled {
 			cursor: not-allowed;
+		}
+	}
+}
+
+.nsm-dialog {
+	max-width: 650px;
+}
+
+.shopping-cart-modal {
+
+	.nsm-content {
+		border-radius: 15px;
+		height: 400px;
+		padding: 20px;
+		overflow-y: auto;
+
+		.nsm-dialog-btn-close {
+			top: 15px;
+			right: 20px;
+		}
+
+		.nsm-body {
+
+			.modal-title {
+				font-size: 30px;
+			}
+
+			.list-container {
+				margin: 25px 0;
+
+				.book-element {
+					display: flex;
+					padding: 15px 0;
+					width: 100%;
+					border-bottom: 1px solid $silver-chalice;
+					position: relative;
+
+					.book-text {
+						font-size: 18px;
+						font-weight: 300;
+					}
+
+					.delete-img {
+						width: 15px;
+						height: 15px;
+						cursor: pointer;
+						position: absolute;
+						right: 15px;
+						bottom: 18px;
+					}
+				}
+			}
 		}
 	}
 }

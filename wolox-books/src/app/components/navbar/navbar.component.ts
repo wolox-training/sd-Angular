@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CartCountService } from 'src/app/services/cart-count.service';
 
 @Component({
   selector: 'app-navbar',

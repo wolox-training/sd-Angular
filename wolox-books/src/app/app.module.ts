@@ -18,6 +18,9 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import { SearchFilterPipe } from './pipes/search-filter.pipe';
 import { DetailComponent } from './screens/auth/book-detail/components/detail/detail.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import { StoreModule } from '@ngrx/store';
+import { reducer } from './store/books.reducer';
+import { NgxSmartModalModule } from 'ngx-smart-modal';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,13 @@ import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxSmartModalModule.forRoot(),
+    StoreModule.forRoot(
+      {
+        cartBooks: reducer
+      }
+    )
   ],
   providers: [
     AuthGuard, 
