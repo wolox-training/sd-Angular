@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,9 @@ import { HomeComponent } from './screens/auth/home/screens/book-list/components/
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './interceptors/token-interceptor.service';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { SearchFilterPipe } from './pipes/search-filter.pipe';
+import { DetailComponent } from './screens/auth/book-detail/components/detail/detail.component';
 
 @NgModule({
   declarations: [
@@ -22,13 +26,17 @@ import { TokenInterceptorService } from './interceptors/token-interceptor.servic
     SignupFormComponent,
     TextInputComponent,
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    SearchBarComponent,
+    SearchFilterPipe,
+    DetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     AuthGuard, 

@@ -1,0 +1,14 @@
+@import '../../../color';
+
+.search-bar {
+	border: 1px solid $silver-chalice;
+	border-radius: 3px;
+	font-size: 14px;
+	height: 20px;
+	width: 100%;
+	padding: 20px;
+	background-image: url('../../../assets/search-icon.png');
+	background-position: 98% 50%;
+	background-repeat: no-repeat;
+	background-size: 15px 15px;
+}

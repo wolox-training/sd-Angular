@@ -1,0 +1,28 @@
+<div class="container">
+	<a routerLink="/auth/home" class="back-btn">Atrás</a>
+	<div class="card">
+		<div class="header">
+			<h1 class="title">{{book.title}}</h1>
+			<span class="subtitle">({{book.genre}})</span>
+		</div>
+		<div class="card-body">
+			<div class="detail">
+				<div class="attribute">
+					<p class="label">Autor del libro:</p>
+					<p class="value">{{book.author}}</p>
+				</div>
+				<div class="attribute">
+					<p class="label">Editorial:</p>
+					<p class="value">{{book.editor}}</p>
+				</div>
+				<div class="attribute">
+					<p class="label">Año de publicado:</p>
+					<p class="value">{{book.year}}</p>
+				</div>
+			</div>
+		</div>
+		<div class="image-container">
+			<img class="cover-image" src="assets/book-cover.png" alt="book cover">
+		</div>
+	</div>
+</div>
